@@ -3,10 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name</title>
+    <title>UX/UI Expert & Graphic Designer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to My GitHub Pages Site</h1>
-    <p>This is your public page!</p>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Without Design, Your Business is Invisible in the Digital Age</h1>
+            <p>A brand without a professional UI/UX and a solid virtual presence is a "leaky bucket" losing revenue every second.</p>
+            <a href="#contact" class="cta-button">Claim Your Authority!</a>
+        </div>
+    </header>
+
+    <!-- Branding Section -->
+    <section class="portfolio-section">
+        <h2 class="section-title">Identity & Branding Impact</h2>
+        <div class="grid-4">
+            <!-- Card 1 -->
+            <div class="card" style="background-image: url('img/cancelariaLogo6.png');">
+                <div class="card-overlay">
+                    <h3>Trust Factor</h3>
+                    <p>94% of first impressions are design-related. If they don't trust the look, they won't trust the service.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card" style="background-image: url('img/chautariRestaurant.jpg');">
+                <div class="card-overlay">
+                    <h3>Emotional Connection</h3>
+                    <p>People buy with emotion first. A visual identity creates the bond text never could.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card" style="background-image: url('img/diracGIG.png');">
+                <div class="card-overlay">
+                    <h3>Market Dominance</h3>
+                    <p>Premium design positions you as a leader, not a follower, justifying higher ticket prices.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card" style="background-image: url('img/geidEvents.png');">
+                <div class="card-overlay">
+                    <h3>Clear Recognition</h3>
+                    <p>Consistency across all platforms ensures your brand stays at the top of their mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI/UX Section -->
+    <section class="portfolio-section bg-dark">
+        <h2 class="section-title">Premium Online Presence</h2>
+        <div class="grid-3">
+            <!-- Card UI/UX 1 -->
+            <div class="card" style="background-image: url('img/geoidScreenShot.png');">
+                <div class="card-overlay">
+                    <h3>Conversion Machine</h3>
+                    <ul class="benefit-list">
+                        <li>Eliminate Friction</li>
+                        <li>Guided User Flow</li>
+                        <li>80% Higher Sales</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card UI/UX 2 -->
+            <div class="card" style="background-image: url('img/3premiumSites.png');">
+                <div class="card-overlay">
+                    <h3>User Psychology</h3>
+                    <ul class="benefit-list">
+                        <li>60k Faster Processing</li>
+                        <li>Reduces Cognitive Load</li>
+                        <li>Builds Instant Authority</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card UI/UX 3 -->
+            <div class="card" style="background-image: url('img/chautariScreenShot.png');">
+                <div class="card-overlay">
+                    <h3>Strategic Efficiency</h3>
+                    <ul class="benefit-list">
+                        <li>FUDs Reduction</li>
+                        <li>Data-Driven Layouts</li>
+                        <li>Mobile-First Success</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Filter Section -->
+    <section id="contact" class="form-section">
+        <h2 class="section-title">Ask For Help!</h2>
+        <p class="form-intro">This is a filter to ensure we are a good fit. We only work with those ready for a premium transformation.</p>
+        <!-- Using Formspree to send to your email on GitHub Pages -->
+        <form action="https://script.google.com/macros/s/AKfycbyCJ9pGuhfHDuPJI3_mLFThp7qGX2behd9r6JphHKnPDbazOv5crpskaQLKF7EK73oW/exec" method="POST" id="filter-form">
+            <div class="form-group">
+                <label for="name">Name / Company</label>
+                <input type="text" id="name" name="name" required placeholder="Who are you?">
+            </div>
+            <div class="form-group">
+                <label for="budget">Estimated Budget</label>
+                <select id="budget" name="budget" required>
+                    <option value="" disabled selected>Select your investment level</option>
+                    <option value="1000-3000">€1,000 - €3,000 (Small Business Starter)</option>
+                    <option value="3000-7000">€3,000 - €7,000 (Premium Transformation)</option>
+                    <option value="7000+">€7,000+ (Enterprise/Scale Ready)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Optional Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell me about your dream outcome..."></textarea>
+            </div>
+            <button type="submit" class="cta-button full-width">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p><small><strong>A.I.</strong> - all rights reserved - 2026</small></p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
