@@ -1,0 +1,228 @@
+:root {
+    --black: #0A0A0A;
+    --white: #f5f5f5;
+    --cyan: #00c8ff;
+    --spacing: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif; /* Clean geometric sans-serif */
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: calc(var(--spacing) * 4);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: calc(var(--spacing) * 3);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: calc(var(--spacing) * 8);
+    background: linear-gradient(to right, rgba(10,10,10,0.9) 30%, transparent 100%), url('../img/heroBGR.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cyan);
+    color: var(--black);
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+}
+
+.portfolio-section {
+    padding: calc(var(--spacing) * 12) calc(var(--spacing) * 8);
+}
+
+.grid-4, .grid-3 {
+    display: grid;
+    gap: calc(var(--spacing) * 4);
+}
+
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.card {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    /* Folosim Negru Mat (#0A0A0A) cu opacitate 0.8 pentru a lăsa 20% din imagine vizibilă */
+    background-color: rgba(10, 10, 10, 0.7); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--spacing) * 4); /* Respectăm regula celor opt (32px) */
+    transition: background-color 0.8s ease, opacity 0.8s ease;
+    z-index: 1;
+}
+
+.card:hover .card-overlay {
+    /* La hOver, fundalul devine complet transparent pentru a vedea imaginea 100% */
+    background-color: rgba(10, 10, 10, 0);
+    /* Dacă vrei ca și textul să dispară complet pentru a lăsa imaginea „să vorbească” */
+    opacity: 0; 
+}
+
+.benefit-list {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.benefit-list li {
+    font-weight: bold;
+    color: var(--cyan);
+    margin-bottom: 8px;
+}
+
+.form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: calc(var(--spacing) * 12) 24px;
+}
+
+.form-group {
+    margin-bottom: calc(var(--spacing) * 3);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 16px;
+    background: #1A1A1A;
+    border: 1px solid #333;
+    color: white;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: calc(var(--spacing) * 8);
+    border-top: 1px solid #333;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimization - High Intent Layout */
+@media (max-width: 800px) {
+    :root {
+        /* Reducem spațierea de bază pentru ecrane mici, păstrând multiplii de 8 */
+        --spacing: 8px;
+    }
+
+    h1 {
+        /* Reducem de la 64px la 32px sau 40px pentru a preveni overflow-ul */
+        font-size: 32px !important; 
+        line-height: 1.2;
+        margin-bottom: calc(var(--spacing) * 3); /* 24px */
+    }
+
+    h2.section-title {
+        font-size: 28px !important;
+        margin-bottom: calc(var(--spacing) * 4); /* 32px */
+    }
+
+    p {
+        font-size: 16px; /* Text mai compact pentru scanare rapidă */
+    }
+
+    .hero {
+        height: auto; /* Permitem secțiunii să crească în funcție de conținut */
+        min-height: 100vh;
+        padding: calc(var(--spacing) * 6) calc(var(--spacing) * 3); /* 48px sus/jos, 24px lateral */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .portfolio-section {
+        padding: calc(var(--spacing) * 8) calc(var(--spacing) * 3); /* 64px sus/jos, 24px lateral */
+    }
+
+    /* Stack vertical obligatoriu pentru carduri pe mobil */
+    .grid-4, .grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: calc(var(--spacing) * 3); /* 24px gap */
+    }
+
+    .card {
+        height: 300px; /* Carduri mai scurte pentru a facilita scroll-ul */
+    }
+
+    .cta-button {
+        width: 100%; /* Buton pe toată lățimea pentru accesibilitate tactilă (thumb-friendly) */
+        text-align: center;
+        padding: 16px;
+    }
+
+    /* Eliminăm white space-ul inutil care „împinge” conținutul sub fold */
+    .form-section {
+        padding: calc(var(--spacing) * 8) calc(var(--spacing) * 3);
+    }
+
+    /* Ajustare Footer pentru Mobile */
+    footer {
+        padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2); /* Reducem la 32px sus/jos pentru un look compact */
+        font-size: 12px; /* Micșorăm ușor textul pentru a păstra contrastul cu restul secțiunilor */
+    }
+}
